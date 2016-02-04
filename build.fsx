@@ -14,17 +14,20 @@ open Fake.ReleaseNotesHelper
 // Information about the project to be used at NuGet and in AssemblyInfo files
 // --------------------------------------------------------------------------------------
 
-let projectName = "R.NET"
-let projectSummary = "Interoperability library to access R from .NET languages"
+let projectName = "Spreads.R"
+let projectSummary = "R interoperability library optimized for Spreads"
 let projectDescription = """
   A .NET interoperability library to access the R statistical package from .NET languages.
-  The library is designed for fast data exchange of arrays, in process."""
-let authors = ["Kosei Abe"; "Jean-Michel Perraud"]
+  The library is based on R.NET and is optimized for fast zero-copy data exchange of arrays and Spreads series."""
+let authors = [ "Victor Baybekov, R.NET original authors (Kosei Abe; Jean-Michel Perraud)"]
 let companyName = ""
-let tags = ".NET R R.NET visualization statistics C# F#"
+let tags = ".NET R R.NET visualization statistics C# F# Spreads F# data streaming real-time analysis streams time series reactive"
 
-let gitHome = "https://github.com/jmp75/rdotnet"
-let gitName = "rdotnet"
+let gitOwner = "Spreads"
+let gitHome = "https://github.com/" + gitOwner
+
+// The name of the project on GitHub
+let gitName = "Spreads.R"
 
 // --------------------------------------------------------------------------------------
 // The rest of the code is standard F# build script 
@@ -129,11 +132,7 @@ let DoNuGet fileName =
         fileName
 
 Target "NuGetRDotNet" (fun _ ->
-    DoNuGet "nuget/RDotNet.nuspec"
-)
-
-Target "NuGetRDotNetFs" (fun _ ->
-    DoNuGet "nuget/RDotNet.FSharp.nuspec"
+    DoNuGet "nuget/Spreads.R.nuspec"
 )
 
 // --------------------------------------------------------------------------------------
@@ -191,12 +190,11 @@ Target "Test" DoNothing
 //  ==> "All"
 
 "VersionInfo" ==> "All" 
-"Build" ==> "All" 
-"All" ==> "RunTests" ==> "Test"
+//"Build" ==> "All" 
+//"All" ==> "RunTests" ==> "Test"
 
 "NuGetRDotNet" ==> "NuGet"
-"NuGetRDotNetFs" ==> "NuGet"
   
 "All" ==> "NuGet" ==> "Release"
 
-RunTargetOrDefault "All"
+RunTargetOrDefault "NuGet"

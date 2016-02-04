@@ -1,0 +1,47 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spreads.R.NET", "R.NET\Spreads.R.NET.csproj", "{0923E1A0-2032-4997-AB73-49E42C4034A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spreads.R.Graphics", "RDotNet.Graphics\Spreads.R.Graphics.csproj", "{BCADF6CF-2D63-4BD7-BC28-F0AC4F98AE78}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "project", "project", "{FA5B215A-4F65-4167-8509-8ADBF78B45ED}"
+	ProjectSection(SolutionItems) = preProject
+		build.fsx = build.fsx
+		paket.dependencies = paket.dependencies
+		paket.lock = paket.lock
+		RDotNet.Graphics.nuspec = RDotNet.Graphics.nuspec
+		README.md = README.md
+		RELEASE_NOTES.md = RELEASE_NOTES.md
+		nuget\Spreads.R.nuspec = nuget\Spreads.R.nuspec
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Spreads.R", "RDotNet.FSharp\Spreads.R.fsproj", "{FE745BFD-793D-4B05-B0EE-BEA4D5E3C0A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0923E1A0-2032-4997-AB73-49E42C4034A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0923E1A0-2032-4997-AB73-49E42C4034A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0923E1A0-2032-4997-AB73-49E42C4034A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0923E1A0-2032-4997-AB73-49E42C4034A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCADF6CF-2D63-4BD7-BC28-F0AC4F98AE78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCADF6CF-2D63-4BD7-BC28-F0AC4F98AE78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCADF6CF-2D63-4BD7-BC28-F0AC4F98AE78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCADF6CF-2D63-4BD7-BC28-F0AC4F98AE78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE745BFD-793D-4B05-B0EE-BEA4D5E3C0A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE745BFD-793D-4B05-B0EE-BEA4D5E3C0A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE745BFD-793D-4B05-B0EE-BEA4D5E3C0A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE745BFD-793D-4B05-B0EE-BEA4D5E3C0A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = R.NET\R.NET.csproj
+	EndGlobalSection
+EndGlobal
