@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 
-[assembly: AssemblyTitle("R.NET")]
-[assembly: AssemblyDescription("Collaboration of .NET Framework with R statistical computing")]
+[assembly: AssemblyTitle("Spreads.R.NET")]
+[assembly: AssemblyDescription("Spreads.R.NET")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("RecycleBin")]
-[assembly: AssemblyProduct("R.NET")]
-[assembly: AssemblyCopyright("Copyright © RecycleBin 2011")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("Spreads.R.NET")]
+[assembly: AssemblyCopyright("Copyright © Victor Baybekov 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -22,6 +22,5 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-
-[assembly: Guid("9ecd1b81-67cd-417a-8b4d-77847c3353d4")]
+[assembly: Guid("03F198CB-8FFE-4E0E-A1EE-A0A25ABF5F9E")]
 [assembly: InternalsVisibleTo("RDotNet.Tests")]

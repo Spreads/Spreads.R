@@ -5,9 +5,19 @@ NUGET
     FAKE (4.19.0)
     FSharp.Core (3.1.2.5)
     NuGet.CommandLine (3.3.0)
-    NUnit (3.0.1)
+    NUnit (2.6.4)
     NUnit.Console (3.0.1)
     NUnit.Runners (3.0.1)
       NUnit.Console (3.0.1)
     Spreads.Core (0.3.3)
       FSharp.Core (>= 3.1.2.5)
+GITHUB
+  remote: BlueMountainCapital/FSharpRProvider
+  specs:
+    src/RProvider/CharacterDeviceInterceptor.fs (04997e52736090d8f9b77c2ce2a75cd3d0850264)
+    src/RProvider/Configuration.fs (04997e52736090d8f9b77c2ce2a75cd3d0850264)
+    src/RProvider/Converters.fs (04997e52736090d8f9b77c2ce2a75cd3d0850264)
+    src/RProvider/Logging.fs (04997e52736090d8f9b77c2ce2a75cd3d0850264)
+    src/RProvider/RInit.fs (04997e52736090d8f9b77c2ce2a75cd3d0850264)
+    src/RProvider/RInterop.fs (04997e52736090d8f9b77c2ce2a75cd3d0850264)
+    src/RProvider/RInteropInterface.fs (04997e52736090d8f9b77c2ce2a75cd3d0850264)

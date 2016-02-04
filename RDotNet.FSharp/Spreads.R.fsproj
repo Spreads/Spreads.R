@@ -60,11 +60,31 @@
     <Compile Include="Vector.fs" />
     <Compile Include="Matrix.fsi" />
     <Compile Include="Matrix.fs" />
-    <None Include="RDotNet.FSharp.fsx">
+    <None Include="Spreads.R.fsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <Compile Include="VersionInfo.fs" />
     <None Include="paket.references" />
+    <Compile Include="..\paket-files\BlueMountainCapital\FSharpRProvider\src\RProvider\RInteropInterface.fs">
+      <Link>RInteropInterface.fs</Link>
+    </Compile>
+    <Compile Include="..\paket-files\BlueMountainCapital\FSharpRProvider\src\RProvider\CharacterDeviceInterceptor.fs">
+      <Link>CharacterDeviceInterceptor.fs</Link>
+    </Compile>
+    <Compile Include="..\paket-files\BlueMountainCapital\FSharpRProvider\src\RProvider\Logging.fs">
+      <Link>Logging.fs</Link>
+    </Compile>
+    <Compile Include="Configuration.fs" />
+    <Compile Include="..\paket-files\BlueMountainCapital\FSharpRProvider\src\RProvider\RInit.fs">
+      <Link>RInit.fs</Link>
+    </Compile>
+    <Compile Include="..\paket-files\BlueMountainCapital\FSharpRProvider\src\RProvider\RInterop.fs">
+      <Link>RInterop.fs</Link>
+    </Compile>
+    <Compile Include="..\paket-files\BlueMountainCapital\FSharpRProvider\src\RProvider\Converters.fs">
+      <Link>Converters.fs</Link>
+    </Compile>
+    <Compile Include="SliceCursor.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -78,6 +98,8 @@
       <HintPath>..\packages\Spreads.Core\lib\net45\Spreads.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
   </ItemGroup>

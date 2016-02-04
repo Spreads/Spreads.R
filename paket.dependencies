@@ -1,9 +1,18 @@
 source https://www.nuget.org/api/v2
 
 nuget DynamicInterop
-nuget NUnit
+nuget NUnit < 3.0.0
 nuget FAKE
 nuget NUnit.Runners
 nuget NuGet.CommandLine
 nuget Spreads.Core >= 0.3.3 prerelease
 nuget FSharp.Core = 3.1.2.5
+
+
+github BlueMountainCapital/FSharpRProvider src/RProvider/RInteropInterface.fs
+github BlueMountainCapital/FSharpRProvider src/RProvider/CharacterDeviceInterceptor.fs
+github BlueMountainCapital/FSharpRProvider src/RProvider/Logging.fs
+github BlueMountainCapital/FSharpRProvider src/RProvider/Configuration.fs
+github BlueMountainCapital/FSharpRProvider src/RProvider/RInit.fs
+github BlueMountainCapital/FSharpRProvider src/RProvider/RInterop.fs
+github BlueMountainCapital/FSharpRProvider src/RProvider/Converters.fs
