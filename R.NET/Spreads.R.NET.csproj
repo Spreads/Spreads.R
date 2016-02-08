@@ -37,11 +37,13 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Spreads.Collections">
-      <HintPath>..\packages\Spreads.Core\lib\net45\Spreads.Collections.dll</HintPath>
+    <Reference Include="Spreads.Collections, Version=0.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Spreads\bin\Spreads.Collections.dll</HintPath>
     </Reference>
-    <Reference Include="Spreads.Core">
-      <HintPath>..\packages\Spreads.Core\lib\net45\Spreads.Core.dll</HintPath>
+    <Reference Include="Spreads.Core, Version=0.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Spreads\bin\Spreads.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -116,6 +118,8 @@
     <Compile Include="ParseException.cs" />
     <Compile Include="ProtectedPointer.cs" />
     <Compile Include="REngineExtension.cs" />
+    <Compile Include="Spreads\RPanel.cs" />
+    <Compile Include="Spreads\SpreadsFunctions.cs" />
     <Compile Include="StartupParameter.cs" />
     <Compile Include="Symbol.cs" />
     <Compile Include="SymbolicExpression.cs" />

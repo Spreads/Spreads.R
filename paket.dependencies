@@ -5,7 +5,8 @@ nuget NUnit < 3.0.0
 nuget FAKE
 nuget NUnit.Runners
 nuget NuGet.CommandLine
-nuget Spreads.Core >= 0.3.3 prerelease
+nuget Spreads >= 0.3.3
+nuget Spreads.Core >= 0.3.3
 nuget FSharp.Core = 3.1.2.5
 
 
