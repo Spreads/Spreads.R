@@ -6,9 +6,18 @@ using System.Threading.Tasks;
 
 namespace RDotNet.Spreads {
     public static class SpreadsFunctions {
-        public static SymbolicExpression Echo(this REngine engine, SymbolicExpression x) {
-            var f = engine.GetSymbol("spreads_echo").AsFunction();
-            return f.Invoke(new Dictionary<string, SymbolicExpression>() { { "x", x } });
+        public static GenericVector Echo(this REngine engine, params SymbolicExpression[] args) {
+            var env = engine.GetSymbol("Spreads").AsEnvironment();
+            var f = env.GetSymbol("Echo").AsFunction();
+            //return f.Invoke(new Dictionary<string, SymbolicExpression>() { { "x", x } });
+            return f.Invoke(args).AsList();
+        }
+
+        public static NumericVector Incr(this REngine engine, NumericVector x) {
+            var env = engine.GetSymbol("Spreads").AsEnvironment();
+            var f = env.GetSymbol("Incr").AsFunction();
+            //return f.Invoke(new Dictionary<string, SymbolicExpression>() { { "x", x } });
+            return f.Invoke(x).AsNumeric();
         }
     }
 }
