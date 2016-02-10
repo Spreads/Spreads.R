@@ -19,5 +19,24 @@ namespace RDotNet.Spreads {
             //return f.Invoke(new Dictionary<string, SymbolicExpression>() { { "x", x } });
             return f.Invoke(x).AsNumeric();
         }
+
+        public static void SaveObject(this REngine engine, SymbolicExpression dataObject, string filename = "Data.RData") {
+            var env = engine.GetSymbol("Spreads").AsEnvironment();
+            var f = env.GetSymbol("SaveObject").AsFunction();
+            f.Invoke(new Dictionary<string, SymbolicExpression>()
+            {
+                { "dataObject", dataObject },
+                { "filename", new CharacterVector(engine, new[] { filename }) }
+            });
+        }
+
+        public static SymbolicExpression LoadObject(this REngine engine, string filename = "Data.RData") {
+            var env = engine.GetSymbol("Spreads").AsEnvironment();
+            var f = env.GetSymbol("LoadObject").AsFunction();
+            return f.Invoke(new Dictionary<string, SymbolicExpression>()
+            {
+                { "filename", new CharacterVector(engine, new[] { filename }) }
+            });
+        }
     }
 }

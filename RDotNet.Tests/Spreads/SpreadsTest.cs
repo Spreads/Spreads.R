@@ -94,5 +94,23 @@ namespace RDotNet {
                 Assert.AreEqual(res[i], i+1);
             }
         }
+
+        [Test]
+        public void CouldSaveAndLoadObject() {
+            var engine = this.Engine;
+            engine.Evaluate("library(Spreads)");
+
+            // function must be registered: Spreads$RegisterFunction('Incr', function(x){x+1})
+            var x = new NumericVector(this.Engine, 1000);
+            for (int i = 0; i < 1000; i++) {
+                x[i] = i;
+            }
+            engine.SaveObject(x, "DummyVector.RData");
+            var res = engine.LoadObject("DummyVector.RData").AsNumeric();
+            for (int i = 0; i < 1000; i++) {
+                Assert.AreEqual(res[i], i);
+            }
+        }
+
     }
 }
