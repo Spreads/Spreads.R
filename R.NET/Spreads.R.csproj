@@ -2,11 +2,20 @@
 
   <PropertyGroup>
     <TargetFramework>NET451</TargetFramework>
-    <Version>0.7.0-$(VersionSuffix)</Version>
+    <Version>0.7.0</Version>
+    <Version Condition="'$(VersionSuffix)'!=''">$(Version)-$(VersionSuffix)</Version>
     <Copyright>Victor Baybekov, 2017</Copyright>
     <PackageLicenseUrl>https://github.com/Spreads/Spreads.R/blob/spreads/LICENSE.txt</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/Spreads/Spreads.R/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Spreads/Spreads.R/</RepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
