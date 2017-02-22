@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace RDotNet.Graphics
@@ -372,13 +373,13 @@ namespace RDotNet.Graphics
         private void EventHelper(IntPtr dd, int code)
         { }
 
-        private IEnumerable<Point> GetPoints(int n, IntPtr x, IntPtr y)
+        private unsafe IEnumerable<Point> GetPoints(int n, IntPtr x, IntPtr y)
         {
             return Enumerable.Range(0, n).Select(
                index => {
                    var offset = sizeof(double) * index;
-                   var px = Utility.ReadDouble(x, offset);
-                   var py = Utility.ReadDouble(y, offset);
+                   var px = Unsafe.Read<double>((void*)(x + offset));
+                   var py = Unsafe.Read<double>((void*)(y + offset));
                    return new Point(px, py);
                }
                );

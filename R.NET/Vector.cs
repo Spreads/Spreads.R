@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 
@@ -25,15 +26,14 @@ namespace RDotNet
         /// <param name="engine">The <see cref="REngine"/> handling this instance.</param>
         /// <param name="type">The element type.</param>
         /// <param name="length">The length of vector.</param>
-        protected Vector(REngine engine, SymbolicExpressionType type, int length)
+        protected unsafe Vector(REngine engine, SymbolicExpressionType type, int length)
             : base(engine, engine.GetFunction<Rf_allocVector>()(type, length))
         {
             if (length <= 0)
             {
                 throw new ArgumentOutOfRangeException("length");
             }
-            var empty = new byte[length * DataSize];
-            Marshal.Copy(empty, 0, DataPointer, empty.Length);
+            Unsafe.InitBlockUnaligned((void*)DataPointer, 0, (uint)(length * DataSize));
         }
 
         /// <summary>
@@ -236,6 +236,7 @@ namespace RDotNet
         /// </summary>
         /// <param name="index">The index.</param>
         /// <returns>The offset.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected int GetOffset(int index)
         {
             return DataSize * index;

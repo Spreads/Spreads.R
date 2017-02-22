@@ -1,6 +1,8 @@
 ﻿using RDotNet.Internals;
+using Spreads.Buffers;
 using System;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace RDotNet
@@ -182,33 +184,26 @@ namespace RDotNet
             }
         }
 
-        private double ReadDouble(IntPtr pointer, int offset)
+        private unsafe double ReadDouble(IntPtr pointer, int offset)
         {
-            var data = new byte[sizeof(double)];
-            for (int byteIndex = 0; byteIndex < data.Length; byteIndex++)
-            {
-                data[byteIndex] = Marshal.ReadByte(pointer, offset + byteIndex);
-            }
-            return BitConverter.ToDouble(data, 0);
+            var data = Unsafe.Read<double>((void*)(pointer + offset));
+            return data;
         }
 
-        private void WriteDouble(double value, IntPtr pointer, int offset)
+        private unsafe void WriteDouble(double value, IntPtr pointer, int offset)
         {
-            byte[] data = BitConverter.GetBytes(value);
-            for (int byteIndex = 0; byteIndex < data.Length; byteIndex++)
-            {
-                Marshal.WriteByte(pointer, offset + byteIndex, data[byteIndex]);
-            }
+            Unsafe.Write<double>((void*)(pointer + offset), value);
         }
 
-        private int ReadInt32(IntPtr pointer, int offset)
+        private unsafe int ReadInt32(IntPtr pointer, int offset)
         {
-            return Marshal.ReadInt32(pointer, offset);
+            var data = Unsafe.Read<int>((void*)(pointer + offset));
+            return data;
         }
 
-        private void WriteInt32(int value, IntPtr pointer, int offset)
+        private unsafe void WriteInt32(int value, IntPtr pointer, int offset)
         {
-            Marshal.WriteInt32(pointer, offset, value);
+            Unsafe.Write<int>((void*)(pointer + offset), value);
         }
 
         private string ReadString(IntPtr pointer, int offset)

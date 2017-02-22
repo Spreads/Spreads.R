@@ -1,6 +1,7 @@
 ﻿using RDotNet.Internals;
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 
@@ -58,7 +59,7 @@ namespace RDotNet
         /// </summary>
         /// <param name="index">The zero-based index of the element to get or set.</param>
         /// <returns>The element at the specified index.</returns>
-        public override double this[int index]
+        public unsafe override double this[int index]
         {
             get
             {
@@ -68,11 +69,9 @@ namespace RDotNet
                 }
                 using (new ProtectedPointer(this))
                 {
-                    var data = new double[1];
                     int offset = GetOffset(index);
-                    IntPtr pointer = IntPtr.Add(DataPointer, offset);
-                    Marshal.Copy(pointer, data, 0, data.Length);
-                    return data[0];
+                    IntPtr pointer = DataPointer + offset;
+                    return Unsafe.Read<double>((void*)pointer);
                 }
             }
             set

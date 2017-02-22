@@ -2,6 +2,7 @@
 using RDotNet.Internals;
 using System;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 
@@ -23,7 +24,7 @@ namespace RDotNet
         /// <param name="type">The element type.</param>
         /// <param name="rowCount">The size of row.</param>
         /// <param name="columnCount">The size of column.</param>
-        protected Matrix(REngine engine, SymbolicExpressionType type, int rowCount, int columnCount)
+        protected unsafe Matrix(REngine engine, SymbolicExpressionType type, int rowCount, int columnCount)
             : base(engine, engine.GetFunction<Rf_allocMatrix>()(type, rowCount, columnCount))
         {
             if (rowCount <= 0)
@@ -34,8 +35,7 @@ namespace RDotNet
             {
                 throw new ArgumentOutOfRangeException("columnCount");
             }
-            var empty = new byte[rowCount * columnCount * DataSize];
-            Marshal.Copy(empty, 0, DataPointer, empty.Length);
+            Unsafe.InitBlockUnaligned((void*)DataPointer, 0, (uint)(rowCount * columnCount * DataSize));
         }
 
         /// <summary>
