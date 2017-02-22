@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>NET451</TargetFramework>
+    <Version>0.7.0-$(VersionSuffix)</Version>
+    <Copyright>Victor Baybekov, 2017</Copyright>
+    <PackageLicenseUrl>https://github.com/Spreads/Spreads.R/blob/spreads/LICENSE.txt</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Spreads/Spreads.R/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Spreads/Spreads.R/</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Spreads.Collections" Version="0.7.0-build1702221058" />
+    <PackageReference Include="System.Dynamic.Runtime" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+</Project>

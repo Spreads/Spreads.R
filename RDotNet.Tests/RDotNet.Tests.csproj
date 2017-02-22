@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RDotNet</RootNamespace>
     <AssemblyName>RDotNet.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
@@ -50,10 +50,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Spreads\bin\Spreads.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Spreads.Extensions, Version=0.3.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Spreads\bin\Spreads.Extensions.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
@@ -64,6 +60,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\Helper.cs" />
+    <Compile Include="Base\MockDevice.cs" />
+    <Compile Include="Base\RDotNetTestFixture.cs" />
+    <Compile Include="Base\RuntimeDiagnostics.cs" />
     <Compile Include="MultiThreadingTest.cs" />
     <Compile Include="S4ClassesTest.cs" />
     <Compile Include="ListsTest.cs" />
@@ -83,30 +83,23 @@
     <Compile Include="REngineCleanupTest.cs" />
     <Compile Include="REngineTest.cs" />
     <Compile Include="RFunctionsTest.cs" />
-    <Compile Include="Spreads\SpreadsTest.cs" />
     <Compile Include="UtilityTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\R.NET\Spreads.R.NET.csproj">
-      <Project>{0923e1a0-2032-4997-ab73-49e42c4034a9}</Project>
-      <Name>Spreads.R.NET</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RDotNet.FSharp\Spreads.R.fsproj">
-      <Project>{fe745bfd-793d-4b05-b0ee-bea4d5e3c0a6}</Project>
-      <Name>Spreads.R</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RDotNet.TestBase\RDotNet.TestBase.csproj">
-      <Project>{b9e15660-096f-45fb-82e3-3c21bbe986df}</Project>
-      <Name>RDotNet.TestBase</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="paket.references" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Spreads\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\R.NET\Spreads.R.csproj">
+      <Project>{4c34ea35-2e17-44a1-b986-0ad603be59e3}</Project>
+      <Name>Spreads.R</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -116,15 +109,7 @@
   </Target>
   -->
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
-      <ItemGroup>
-        <Reference Include="DynamicInterop">
-          <HintPath>..\packages\DynamicInterop\lib\net40\DynamicInterop.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-      </ItemGroup>
-    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')" />
   </Choose>
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v2.0' Or $(TargetFrameworkVersion) == 'v3.0' Or $(TargetFrameworkVersion) == 'v3.5')">
