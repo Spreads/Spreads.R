@@ -1,9 +1,9 @@
-﻿using RDotNet.Internals;
-using RDotNet.Internals.Windows;
-using System;
+﻿using System;
 using System.Runtime.InteropServices;
+using Spreads.R.Internals;
+using Spreads.R.Internals.Windows;
 
-namespace RDotNet
+namespace Spreads.R
 {
     /// <summary>
     /// Represents parameters on R's startup.

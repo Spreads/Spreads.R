@@ -1,10 +1,9 @@
-﻿using NUnit.Framework;
-using RDotNet.NativeLibrary;
-using System;
+﻿using System;
 using System.Linq;
 using System.Numerics;
+using NUnit.Framework;
 
-namespace RDotNet
+namespace Spreads.R.Tests.Base
 {
     [TestFixture]
     public class RDotNetTestFixture

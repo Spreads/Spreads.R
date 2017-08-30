@@ -5,7 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace RDotNet.Dynamic
+namespace Spreads.R.Dynamic
 {
     /// <summary>
     /// Dynamic and binding logic for S expressions

@@ -1,7 +1,8 @@
-﻿using NUnit.Framework;
-using System.Collections;
+﻿using System.Collections;
+using NUnit.Framework;
+using Spreads.R.Tests.Base;
 
-namespace RDotNet
+namespace Spreads.R.Tests
 {
     internal class DataFrameTest : RDotNetTestFixture
     {

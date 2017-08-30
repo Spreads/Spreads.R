@@ -1,6 +1,4 @@
-﻿using RDotNet.Diagnostics;
-using RDotNet.Internals;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,8 +6,10 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
+using Spreads.R.Diagnostics;
+using Spreads.R.Internals;
 
-namespace RDotNet
+namespace Spreads.R
 {
     /// <summary>
     /// A vector base.

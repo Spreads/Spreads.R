@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
+using Spreads.R.Tests.Base;
 
-namespace RDotNet
+namespace Spreads.R.Tests
 {
     public class S4ClassesTest : RDotNetTestFixture
     {

@@ -1,8 +1,8 @@
-﻿using RDotNet.Internals;
-using System;
+﻿using System;
 using System.Runtime.Serialization;
+using Spreads.R.Internals;
 
-namespace RDotNet
+namespace Spreads.R
 {
     /// <summary>
     /// Thrown when an engine comes to an error.

@@ -1,8 +1,8 @@
-﻿using NUnit.Framework;
-using RDotNet.Utilities;
-using System.Numerics;
+﻿using System.Numerics;
+using NUnit.Framework;
+using Spreads.R.Utilities;
 
-namespace RDotNet
+namespace Spreads.R.Tests
 {
     [TestFixture]
     public class UtilityTests

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace RDotNet.Graphics
+namespace Spreads.R.Graphics
 {
     public interface IGraphicsDevice
     {

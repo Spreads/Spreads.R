@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace RDotNet.Spreads {
+namespace Spreads.R.Spreads {
     public static class SpreadsFunctions {
         public static GenericVector Echo(this REngine engine, params SymbolicExpression[] args) {
             var env = engine.GetSymbol("Spreads").AsEnvironment();

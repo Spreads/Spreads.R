@@ -1,10 +1,9 @@
-﻿using NUnit.Framework;
-using RDotNet.NativeLibrary;
-using System;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
+using NUnit.Framework;
+using Spreads.R.Tests.Base;
 
-namespace RDotNet
+namespace Spreads.R.Tests
 {
     public class REngineInitTest
     {

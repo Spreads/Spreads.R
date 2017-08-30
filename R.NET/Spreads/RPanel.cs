@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Spreads;
-using Spreads.Collections;
 
-namespace RDotNet.Spreads {
-
-    // TODO RMatrix. R is column-major, need to create a single long vector and copy data to 
+namespace Spreads.R.Spreads {
+    // TODO RMatrix. R is column-major, need to create a single long vector and copy data to
     // it in the same way we do with RPanel.
 
     public class RNumericPanel : IDisposable {
@@ -54,11 +47,9 @@ namespace RDotNet.Spreads {
             _panel.SetAttribute("TimeStamp", _ticks);
         }
 
-        public GenericVector AsDataFrame
-        {
+        public GenericVector AsDataFrame {
             get { return _panel; }
         }
-
 
         /// <summary>
         /// Return number os seconds as double
@@ -69,34 +60,38 @@ namespace RDotNet.Spreads {
                 / TimeSpan.TicksPerMillisecond);
         }
 
-
         // NB with the current simple implementation we do not need a separate project at all
         // However, having access to internals is good and at least it is not a blackbox
         // We could use Spreads.R project as a place for default implementations, e.g. linear
-        // gegreassion, etc.
+        // regression, etc.
 
         // Also, we really do not want to program in R from F#. We only want to call it.
         // On R side, we could call Spreads and get exacty the same objects as we construct here.
-        // In doing so, we could completely separate two environments and separate people could 
+        // In doing so, we could completely separate two environments and separate people could
         // do exploratory work in R.
 
         public void CopySeries(Series<DateTime, double>[] series) {
             if (series.Length != _numericVectors.Length) throw new ArgumentException("Wrong number of series");
-            // TODO (perf) chck if series are SortedMaps and their keys are equal 
+            // TODO (perf) chck if series are SortedMaps and their keys are equal
             // - then we could just copy memory direclty without iterations
             // Also, we need a sliding materialized panel, it could be implemented similarly to
             // SortedSequeMap, but keys and values should be separate, and SortedDeque method
             // should be internal and always return offsets so that we could access value buffers.
 
-            var c = 0;
-            foreach (var row in series.Zip((k, vArr) => vArr)) {
-                _ticks[c] = DateTimeToUnixTimestamp(row.Key);
-                for (int column = 0; column < _width; column++) {
-                    _numericVectors[column][c] = row.Value[column];
-                }
-                c++;
-                if (c == _length) break;
-            }
+            // TODO update dependency
+            throw new NotImplementedException("Zip moved to Spreads, this project only uses Spreads.Collections for now");
+
+            //var c = 0;
+            //var iseriesArray = series.Cast<ISeries<DateTime, double>>().ToArray();
+            //Spreads.Series
+            //foreach (var row in iseriesArray.Zip((k, vArr) => vArr), false) {
+            //    _ticks[c] = DateTimeToUnixTimestamp(row.Key);
+            //    for (int column = 0; column < _width; column++) {
+            //        _numericVectors[column][c] = row.Value[column];
+            //    }
+            //    c++;
+            //    if (c == _length) break;
+            //}
         }
 
         public void Dispose() {

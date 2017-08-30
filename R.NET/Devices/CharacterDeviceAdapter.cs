@@ -1,12 +1,11 @@
-using RDotNet.Internals;
-using RDotNet.Internals.Unix;
-using RDotNet.NativeLibrary;
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
+using Spreads.R.Internals;
+using Spreads.R.Internals.Unix;
 
-namespace RDotNet.Devices
+namespace Spreads.R.Devices
 {
     internal class CharacterDeviceAdapter : IDisposable
     {

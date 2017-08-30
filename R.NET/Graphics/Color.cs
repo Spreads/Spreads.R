@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace RDotNet.Graphics
+namespace Spreads.R.Graphics
 {
     /// <summary>
     /// 32-bit color of ABGR model.

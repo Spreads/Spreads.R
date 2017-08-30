@@ -1,9 +1,8 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.IO;
-using RDotNet.NativeLibrary;
+using Microsoft.Win32;
 
-namespace RDotNet
+namespace Spreads.R.Tests.Base
 {
    public static class Helper
    {

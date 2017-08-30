@@ -1,10 +1,10 @@
-﻿using RDotNet.Internals;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
+using Spreads.R.Internals;
 
-namespace RDotNet
+namespace Spreads.R
 {
     /// <summary>
     /// A collection of integers from <c>-2^31 + 1</c> to <c>2^31 - 1</c>.

@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Linq;
 
-namespace RDotNet.Diagnostics
+namespace Spreads.R.Diagnostics
 {
     [DebuggerDisplay("{Display,nq}")]
     internal class S4ObjectSlotDisplay

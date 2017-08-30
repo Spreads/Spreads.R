@@ -1,8 +1,8 @@
-﻿using RDotNet.Internals;
-using System;
+﻿using System;
 using System.IO;
+using Spreads.R.Internals;
 
-namespace RDotNet.Devices
+namespace Spreads.R.Devices
 {
     /// <summary>
     /// The default IO device, using the System.Console

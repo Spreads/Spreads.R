@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Numerics;
 
-namespace RDotNet.Utilities
+namespace Spreads.R.Utilities
 {
     /// <summary>
     /// An internal helper class to convert types of arrays, primarily for data operations necessary for .NET types to/from R concepts.

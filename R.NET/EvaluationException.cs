@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RDotNet
+namespace Spreads.R
 {
     /// <summary>
     /// Exception signaling that the R engine failed to evaluate a statement

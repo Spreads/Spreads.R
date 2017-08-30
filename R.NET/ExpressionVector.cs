@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 
-namespace RDotNet
+namespace Spreads.R
 {
     /// <summary>
     /// A vector of S expressions

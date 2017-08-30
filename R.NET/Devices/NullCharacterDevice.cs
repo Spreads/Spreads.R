@@ -1,7 +1,7 @@
-﻿using RDotNet.Internals;
-using System;
+﻿using System;
+using Spreads.R.Internals;
 
-namespace RDotNet.Devices
+namespace Spreads.R.Devices
 {
     /// <summary>
     /// A sink with (almost) no effect, similar in purpose to /dev/null

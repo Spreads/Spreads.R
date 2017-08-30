@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace RDotNet.Graphics.Internals
+namespace Spreads.R.Graphics.Internals
 {
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
     internal struct GEDevDesc

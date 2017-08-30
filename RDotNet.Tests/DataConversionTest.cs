@@ -1,8 +1,9 @@
-﻿using NUnit.Framework;
-using System;
+﻿using System;
 using System.Numerics;
+using NUnit.Framework;
+using Spreads.R.Tests.Base;
 
-namespace RDotNet
+namespace Spreads.R.Tests
 {
     /// <summary>
     /// A suite of tests for checking that data is converted as expected from R to .NET

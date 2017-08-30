@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace RDotNet.Graphics.Internals
+namespace Spreads.R.Graphics.Internals
 {
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void R_GE_checkVersionOrDie(int version);

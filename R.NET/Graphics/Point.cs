@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RDotNet.Graphics
+namespace Spreads.R.Graphics
 {
     public struct Point : IEquatable<Point>
     {

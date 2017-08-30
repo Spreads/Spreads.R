@@ -1,6 +1,4 @@
-﻿using RDotNet.NativeLibrary;
-
-namespace RDotNet.Graphics
+﻿namespace RDotNet.Graphics
 {
     internal static class Helper
     {

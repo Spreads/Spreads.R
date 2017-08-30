@@ -1,7 +1,8 @@
-﻿using NUnit.Framework;
-using System.Linq;
+﻿using System.Linq;
+using NUnit.Framework;
+using Spreads.R.Tests.Base;
 
-namespace RDotNet
+namespace Spreads.R.Tests
 {
     public class REngineCleanupTest : RDotNetTestFixture
     {

@@ -1,10 +1,9 @@
-﻿using DynamicInterop;
-using NUnit.Framework;
-using RDotNet.NativeLibrary;
-using System;
+﻿using System;
 using System.IO;
+using NUnit.Framework;
+using Spreads.R.DynamicInterop;
 
-namespace RDotNet
+namespace Spreads.R.Tests
 {
     [TestFixture]
     public class LoadLibraryTest

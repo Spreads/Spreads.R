@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DynamicInterop
+namespace Spreads.R.DynamicInterop
 {
     /// <summary>
     /// An interface definition to hide the platform specific aspects of library loading

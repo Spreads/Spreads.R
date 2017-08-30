@@ -6,7 +6,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 
-namespace RDotNet
+namespace Spreads.R.Tests.Base
 {
     /// <summary>
     /// Supports runtime performance diagnosis and measurements

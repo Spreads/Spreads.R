@@ -1,12 +1,12 @@
-using RDotNet.Diagnostics;
-using RDotNet.Internals;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Security.Permissions;
+using Spreads.R.Diagnostics;
+using Spreads.R.Internals;
 
-namespace RDotNet
+namespace Spreads.R
 {
     /// <summary>
     /// An S4 object
@@ -34,7 +34,10 @@ namespace RDotNet
             : base(engine, pointer)
         {
             if (dotSlotNamesFunc == null)
-                dotSlotNamesFunc = Engine.Evaluate("invisible(.slotNames)").AsFunction();
+            {
+                Engine.Evaluate("invisible(.slotNames)", out var ex);
+                dotSlotNamesFunc = ex.AsFunction();
+            }
         }
 
         /// <summary>

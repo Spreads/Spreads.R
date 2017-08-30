@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace RDotNet.Internals.Unix
+namespace Spreads.R.Internals.Unix
 {
     [StructLayout(LayoutKind.Sequential)]
     internal struct RStart

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using UnixRStruct = RDotNet.Internals.Unix.RStart;
+using UnixRStruct = Spreads.R.Internals.Unix.RStart;
 
-namespace RDotNet.Internals.Windows
+namespace Spreads.R.Internals.Windows
 {
     [StructLayout(LayoutKind.Sequential)]
     internal struct RStart

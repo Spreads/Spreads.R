@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using UnixRStart = RDotNet.Internals.Unix.RStart;
-using WindowsRStart = RDotNet.Internals.Windows.RStart;
+using UnixRStart = Spreads.R.Internals.Unix.RStart;
+using WindowsRStart = Spreads.R.Internals.Windows.RStart;
 
-namespace RDotNet.Internals
+namespace Spreads.R.Internals
 {
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void R_setStartTime();

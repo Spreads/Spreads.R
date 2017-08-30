@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
 
-namespace RDotNet.Dynamic
+namespace Spreads.R.Dynamic
 {
     /// <summary>
     /// Dynamic and binding logic for R data frames

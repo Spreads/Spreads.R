@@ -1,4 +1,4 @@
-﻿namespace RDotNet.Internals.Windows
+﻿namespace Spreads.R.Internals.Windows
 {
     /// <summary>
     /// User interface mode

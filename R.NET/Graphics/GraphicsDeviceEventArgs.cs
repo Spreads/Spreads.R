@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RDotNet.Graphics
+namespace Spreads.R.Graphics
 {
     public class GraphicsDeviceEventArgs : EventArgs
     {

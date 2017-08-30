@@ -1,8 +1,9 @@
-﻿using NUnit.Framework;
-using System;
+﻿using System;
 using System.Threading;
+using NUnit.Framework;
+using Spreads.R.Tests.Base;
 
-namespace RDotNet
+namespace Spreads.R.Tests
 {
     internal class REngineTest : RDotNetTestFixture
     {

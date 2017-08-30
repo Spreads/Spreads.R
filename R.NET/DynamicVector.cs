@@ -1,11 +1,9 @@
-﻿using RDotNet.Internals;
-using Spreads.Buffers;
-using System;
+﻿using System;
 using System.Numerics;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Spreads.R.Internals;
 
-namespace RDotNet
+namespace Spreads.R
 {
     /// <summary>
     /// A collection of values.

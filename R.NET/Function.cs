@@ -1,11 +1,11 @@
-﻿using RDotNet.Internals;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.ExceptionServices;
 using System.Security;
+using Spreads.R.Internals;
 
-namespace RDotNet
+namespace Spreads.R
 {
     /// <summary>
     /// A function is one of closure, built-in function, or special function.
@@ -39,7 +39,7 @@ namespace RDotNet
         /// </example>
         public SymbolicExpression InvokeStrArgs(params string[] args)
         {
-            return Invoke(Array.ConvertAll(args, x => Engine.Evaluate(x)));
+            return Invoke(Array.ConvertAll(args, x => { Engine.Evaluate(x, out var y); return y; }));
         }
 
         /// <summary>

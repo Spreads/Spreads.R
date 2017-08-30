@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.IO;
+using System.Linq;
 
-namespace DynamicInterop
+namespace Spreads.R.DynamicInterop
 {
     /// <summary>
     /// Helper class with functions whose behavior may be depending on the platform 

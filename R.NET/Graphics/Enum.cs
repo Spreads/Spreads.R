@@ -1,4 +1,4 @@
-﻿namespace RDotNet.Graphics
+﻿namespace Spreads.R.Graphics
 {
     public enum LineEnd
     {

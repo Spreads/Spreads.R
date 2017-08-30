@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace RDotNet.Internals.Unix
+namespace Spreads.R.Internals.Unix
 {
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     internal delegate void ptr_R_Suicide([In] [MarshalAs(UnmanagedType.LPStr)] string message);

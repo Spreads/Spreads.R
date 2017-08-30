@@ -1,7 +1,8 @@
 ﻿using NUnit.Framework;
+using Spreads.R.Tests.Base;
 using System.Linq;
 
-namespace RDotNet
+namespace Spreads.R.Tests
 {
     internal class DataFrameRowMappingTest : RDotNetTestFixture
     {

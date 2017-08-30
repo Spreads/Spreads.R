@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Permissions;
-using System.Text;
 using Microsoft.Win32.SafeHandles;
 
-namespace DynamicInterop
+namespace Spreads.R.DynamicInterop
 {
     [SecurityPermission(SecurityAction.Demand, Flags = SecurityPermissionFlag.UnmanagedCode)]
     internal sealed class SafeHandleUnmanagedDll : SafeHandleZeroOrMinusOneIsInvalid
@@ -43,7 +40,7 @@ namespace DynamicInterop
                 {
                     try
                     {
-                        throw new ApplicationException("Warning: unexpected condition of library loader and native handle - some native resources may not be properly disposed of");
+                        throw new System.ApplicationException("Warning: unexpected condition of library loader and native handle - some native resources may not be properly disposed of");
                     }
                     finally
                     {

@@ -1,9 +1,10 @@
-﻿using NUnit.Framework;
-using RDotNet.Internals;
-using System;
+﻿using System;
 using System.Linq;
+using NUnit.Framework;
+using Spreads.R.Internals;
+using Spreads.R.Tests.Base;
 
-namespace RDotNet
+namespace Spreads.R.Tests
 {
     public class RFunctionsTest : RDotNetTestFixture
     {

@@ -1,4 +1,4 @@
-﻿namespace RDotNet.Graphics
+﻿namespace Spreads.R.Graphics
 {
     /// <summary>
     /// Implements a set of predefined colors.

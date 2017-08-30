@@ -1,8 +1,8 @@
-﻿using RDotNet.Graphics.Internals;
-using System;
+﻿using System;
 using System.Runtime.InteropServices;
+using Spreads.R.Graphics.Internals;
 
-namespace RDotNet.Graphics
+namespace Spreads.R.Graphics
 {
     public class DeviceDescription : SafeHandle
     {

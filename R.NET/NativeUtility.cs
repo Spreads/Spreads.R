@@ -1,14 +1,12 @@
-﻿using DynamicInterop;
-using Microsoft.Win32;
-using System;
+﻿using System;
 using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Collections.Generic;
-using System.Collections;
-using System.Linq;
+using Microsoft.Win32;
+using Spreads.R.DynamicInterop;
 
-namespace RDotNet.NativeLibrary
+namespace Spreads.R
 {
     /// <summary>
     /// Collection of utility methods for operating systems.
@@ -494,7 +492,7 @@ namespace RDotNet.NativeLibrary
                 doLogSetEnvVarInfo(@"Local machine SOFTWARE\R-core not found - trying current user", logger);
                 rCore = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\R-core");
                 if (rCore == null)
-                    throw new ApplicationException("Windows Registry key 'SOFTWARE\\R-core' not found in HKEY_LOCAL_MACHINE nor HKEY_CURRENT_USER");
+                    throw new System.ApplicationException("Windows Registry key 'SOFTWARE\\R-core' not found in HKEY_LOCAL_MACHINE nor HKEY_CURRENT_USER");
             }
             doFoundWinRegKey(rCore, logger);
             bool is64Bit = Environment.Is64BitProcess;
@@ -502,7 +500,7 @@ namespace RDotNet.NativeLibrary
             var r = rCore.OpenSubKey(subKey);
             if (r == null)
             {
-                throw new ApplicationException(string.Format(
+                throw new System.ApplicationException(string.Format(
                    "Windows Registry sub-key '{0}' of key '{1}' was not found", subKey, rCore.ToString()));
             }
             doFoundWinRegKey(rCore, logger);

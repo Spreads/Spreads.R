@@ -1,7 +1,8 @@
-﻿using NUnit.Framework;
-using System;
+﻿using System;
+using NUnit.Framework;
+using Spreads.R.Tests.Base;
 
-namespace RDotNet
+namespace Spreads.R.Tests
 {
     public class ExceptionHandlingTest : RDotNetTestFixture
     {
@@ -13,7 +14,7 @@ namespace RDotNet
             var t = v.ToString();
         }
 
-        [Test, ExpectedExceptionAttribute(typeof(ParseException), ExpectedMessage = "Status Error for function(k) substitute(bar(x) = k)\n : unexpected '='")]
+        [Test, ExpectedException(typeof(ParseException), ExpectedMessage = "Status Error for function(k) substitute(bar(x) = k)\n : unexpected '='")]
         public void TestFailedExpressionParsing()
         {
             // https://rdotnet.codeplex.com/workitem/77
@@ -22,7 +23,7 @@ namespace RDotNet
             Assert.IsNull(expr);
         }
 
-        [Test, ExpectedExceptionAttribute(typeof(EvaluationException), ExpectedMessage = "Error in fail(\"bailing out\") : the message is bailing out\n")]
+        [Test, ExpectedException(typeof(EvaluationException), ExpectedMessage = "Error in fail(\"bailing out\") : the message is bailing out\n")]
         public void TestFailedExpressionEvaluation()
         {
             //> fail <- function(msg) {stop(paste( 'the message is', msg))}
@@ -37,7 +38,7 @@ namespace RDotNet
             Assert.IsNull(expr);
         }
 
-        [Test, ExpectedExceptionAttribute(typeof(EvaluationException), ExpectedMessage = "Error: object 'x' not found")]
+        [Test, ExpectedException(typeof(EvaluationException), ExpectedMessage = "Error: object 'x' not found")]
         public void TestFailedExpressionUnboundSymbol()
         {
             var engine = this.Engine;
@@ -45,7 +46,7 @@ namespace RDotNet
             var x = engine.GetSymbol("x");
         }
 
-        [Test, ExpectedExceptionAttribute(typeof(EvaluationException), ExpectedMessage = "Error: object 'x' not found\n")]
+        [Test, ExpectedException(typeof(EvaluationException), ExpectedMessage = "Error: object 'x' not found\n")]
         public void TestFailedExpressionUnboundSymbolEvaluation()
         {
             ReportFailOnLinux("https://rdotnet.codeplex.com/workitem/146");
@@ -53,7 +54,7 @@ namespace RDotNet
             var x = engine.Evaluate("x");
         }
 
-        [Test, ExpectedExceptionAttribute(typeof(EvaluationException), ExpectedMessage = "Error: object 'x' not found\n")]
+        [Test, ExpectedException(typeof(EvaluationException), ExpectedMessage = "Error: object 'x' not found\n")]
         public void TestFailedExpressionParsingMissingParenthesis()
         {
             ReportFailOnLinux("https://rdotnet.codeplex.com/workitem/146");

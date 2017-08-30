@@ -1,10 +1,10 @@
-using RDotNet.Internals;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using Spreads.R.Internals;
 
-namespace RDotNet
+namespace Spreads.R
 {
     /// <summary>
     /// Provides extension methods for <see cref="REngine"/>.

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RDotNet
+namespace Spreads.R
 {
     /// <summary>
     /// Represents a column of certain data frames.

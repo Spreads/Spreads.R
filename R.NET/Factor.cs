@@ -1,11 +1,11 @@
-﻿using RDotNet.Diagnostics;
-using RDotNet.Internals;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Security.Permissions;
+using Spreads.R.Diagnostics;
+using Spreads.R.Internals;
 
-namespace RDotNet
+namespace Spreads.R
 {
     /// <summary>
     /// Represents factors.

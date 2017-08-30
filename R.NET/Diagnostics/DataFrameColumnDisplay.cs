@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace RDotNet.Diagnostics
+namespace Spreads.R.Diagnostics
 {
     [DebuggerDisplay("{Display,nq}")]
     internal class DataFrameColumnDisplay

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RDotNet.Utilities
+namespace Spreads.R.Utilities
 {
     /// <summary>
     /// Advanced, less usual extension methods for the R.NET REngine

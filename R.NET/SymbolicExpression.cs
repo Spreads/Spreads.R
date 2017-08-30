@@ -1,13 +1,13 @@
-﻿using RDotNet.Dynamic;
-using RDotNet.Internals;
-using RDotNet.Utilities;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Dynamic;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
+using Spreads.R.Dynamic;
+using Spreads.R.Internals;
+using Spreads.R.Utilities;
 
-namespace RDotNet
+namespace Spreads.R
 {
     /// <summary>
     /// An expression in R environment.

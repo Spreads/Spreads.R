@@ -1,8 +1,8 @@
-﻿using RDotNet.Internals;
-using System;
+﻿using System;
 using System.Security.Permissions;
+using Spreads.R.Internals;
 
-namespace RDotNet
+namespace Spreads.R
 {
     /// <summary>
     /// Provides extension methods for <see cref="SymbolicExpression"/>.
@@ -52,7 +52,11 @@ namespace RDotNet
                 asListFunction = null;
             }
             if (asListFunction == null)
-                asListFunction = engine.Evaluate("invisible(as.list)").AsFunction();
+            {
+                engine.Evaluate("invisible(as.list)", out var ex);
+                asListFunction = ex.AsFunction();
+            }
+
             var newExpression = asListFunction.Invoke(expression);
             return new GenericVector(newExpression.Engine, newExpression.DangerousGetHandle());
         }
@@ -531,7 +535,7 @@ namespace RDotNet
         }
 
         /// <summary>
-        /// Specifies the expression is an <see cref="RDotNet.Expression"/> object or not.
+        /// Specifies the expression is an <see cref="Expression"/> object or not.
         /// </summary>
         /// <param name="expression">The expression.</param>
         /// <returns><c>True</c> if it is an expression.</returns>
@@ -545,7 +549,7 @@ namespace RDotNet
         }
 
         /// <summary>
-        /// Gets the expression as an <see cref="RDotNet.Expression"/>.
+        /// Gets the expression as an <see cref="Expression"/>.
         /// </summary>
         /// <param name="expression">The expression.</param>
         /// <returns>The expression.</returns>

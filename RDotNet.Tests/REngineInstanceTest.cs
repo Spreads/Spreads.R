@@ -1,10 +1,10 @@
-﻿using NUnit.Framework;
-using RDotNet.Devices;
-using System;
+﻿using System;
 using System.IO;
 using System.Reflection;
+using NUnit.Framework;
+using Spreads.R.Devices;
 
-namespace RDotNet
+namespace Spreads.R.Tests
 {
     [TestFixture]
     internal class REngineInstanceTest

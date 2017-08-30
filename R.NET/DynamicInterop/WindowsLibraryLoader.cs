@@ -6,14 +6,13 @@ using System.Security.Permissions;
 using System.Text;
 using Microsoft.Win32;
 
-namespace DynamicInterop
+namespace Spreads.R.DynamicInterop
 {
     [SecurityPermission(SecurityAction.Demand, Flags = SecurityPermissionFlag.UnmanagedCode)]
     internal class WindowsLibraryLoader : IDynamicLibraryLoader
     {
         public IntPtr LoadLibrary(string filename)
         {
-            new SecurityPermission(SecurityPermissionFlag.UnmanagedCode).Demand();
             var handle = Win32.LoadLibrary(filename);
             if (handle == IntPtr.Zero)
             {

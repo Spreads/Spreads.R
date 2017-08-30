@@ -1,12 +1,12 @@
-﻿using RDotNet.Dynamic;
-using RDotNet.Internals;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
+using Spreads.R.Dynamic;
+using Spreads.R.Internals;
 
-namespace RDotNet
+namespace Spreads.R
 {
     /// <summary>
     /// A generic list. This is also known as list in R.
@@ -115,7 +115,7 @@ namespace RDotNet
         }
 
         /// <summary>
-        /// Converts into a <see cref="RDotNet.Pairlist"/>.
+        /// Converts into a <see cref="Pairlist"/>.
         /// </summary>
         /// <returns>The pairlist.</returns>
         public Pairlist ToPairlist()

@@ -1,7 +1,7 @@
-﻿using RDotNet.Internals;
-using System;
+﻿using System;
+using Spreads.R.Internals;
 
-namespace RDotNet
+namespace Spreads.R
 {
     /// <summary>
     /// A language object.

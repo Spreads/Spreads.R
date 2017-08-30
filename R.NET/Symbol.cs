@@ -1,9 +1,9 @@
-﻿using RDotNet.Internals;
-using RDotNet.Utilities;
-using System;
+﻿using System;
 using System.Runtime.InteropServices;
+using Spreads.R.Internals;
+using Spreads.R.Utilities;
 
-namespace RDotNet
+namespace Spreads.R
 {
     /// <summary>
     /// A symbol object.

@@ -1,9 +1,9 @@
-﻿using RDotNet.Devices;
-using RDotNet.Internals;
-using System;
+﻿using System;
 using System.Text;
+using Spreads.R.Devices;
+using Spreads.R.Internals;
 
-namespace RDotNet
+namespace Spreads.R.Tests.Base
 {
     public class MockDevice : ICharacterDevice
     {

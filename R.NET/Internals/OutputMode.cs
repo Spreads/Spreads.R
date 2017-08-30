@@ -1,6 +1,6 @@
 using System;
 
-namespace RDotNet.Internals
+namespace Spreads.R.Internals
 {
     /// <summary>
     /// Specifies output mode.

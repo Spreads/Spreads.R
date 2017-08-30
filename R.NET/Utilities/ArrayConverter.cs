@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RDotNet.Utilities
+namespace Spreads.R.Utilities
 {
     /// <summary>
     /// A set of helpers to convert, query and transform arrays

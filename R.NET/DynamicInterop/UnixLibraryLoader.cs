@@ -5,9 +5,8 @@ using System.Linq;
 using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
-using System.Text;
 
-namespace DynamicInterop
+namespace Spreads.R.DynamicInterop
 {
     [SecurityPermission(SecurityAction.Demand, Flags = SecurityPermissionFlag.UnmanagedCode)]
     internal class UnixLibraryLoader : IDynamicLibraryLoader

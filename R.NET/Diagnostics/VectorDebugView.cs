@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace RDotNet.Diagnostics
+namespace Spreads.R.Diagnostics
 {
     internal class VectorDebugView<T>
     {

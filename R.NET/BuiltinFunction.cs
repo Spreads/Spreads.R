@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace RDotNet
+namespace Spreads.R
 {
     /// <summary>
     /// A built-in function.

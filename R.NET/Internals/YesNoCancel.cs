@@ -1,4 +1,4 @@
-﻿namespace RDotNet.Internals
+﻿namespace Spreads.R.Internals
 {
     /// <summary>
     /// User's decision.

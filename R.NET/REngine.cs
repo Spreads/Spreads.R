@@ -1,8 +1,4 @@
-﻿using RDotNet.Devices;
-using RDotNet.Internals;
-using RDotNet.NativeLibrary;
-using RDotNet.Utilities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,8 +6,11 @@ using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using System.Text;
 using System.Text.RegularExpressions;
+using Spreads.R.Devices;
+using Spreads.R.Internals;
+using Spreads.R.Utilities;
 
-namespace RDotNet
+namespace Spreads.R
 {
     /// <summary>
     /// REngine handles R environment through evaluation of R statement.
@@ -541,6 +540,28 @@ namespace RDotNet
         }
 
         /// <summary>
+        /// Evaluates a statement in the given string.
+        /// </summary>
+        /// <param name="statement">The statement.</param>
+        /// <returns>Last evaluation.</returns>
+        public void EvaluateVoid(string statement)
+        {
+            CheckEngineIsRunning();
+            Defer(EncodeNonAsciiCharacters(statement)).LastOrDefault()?.Dispose();
+        }
+
+        /// <summary>
+        /// Evaluates a statement in the given string.
+        /// </summary>
+        /// <param name="statement">The statement.</param>
+        /// <param name="lastResult">Last evaluation.</param>
+        public void Evaluate(string statement, out SymbolicExpression lastResult)
+        {
+            CheckEngineIsRunning();
+            lastResult =  Defer(EncodeNonAsciiCharacters(statement)).LastOrDefault();
+        }
+
+        /// <summary>
         /// Evaluates a statement in the given stream.
         /// </summary>
         /// <param name="stream">The stream.</param>
@@ -752,7 +773,7 @@ namespace RDotNet
             return split[0];
         }
 
-        public static int[] IndexOfAll(string sourceString, string matchString)
+        private static int[] IndexOfAll(string sourceString, string matchString)
         {
             matchString = Regex.Escape(matchString);
             var res = (from Match match in Regex.Matches(sourceString, matchString) select match.Index);
@@ -814,7 +835,7 @@ namespace RDotNet
         }
 
         /// <summary>
-        /// Gets or sets a value indicating whether this <see cref="RDotNet.REngine"/> auto print R evaluation results, if they are visible.
+        /// Gets or sets a value indicating whether this <see cref="REngine"/> auto print R evaluation results, if they are visible.
         /// </summary>
         /// <value><c>true</c> if auto print; otherwise, <c>false</c>.</value>
         public bool AutoPrint { get; set; }
@@ -999,7 +1020,8 @@ namespace RDotNet
         {
             if (toDetach == null)
             {
-                toDetach = Evaluate("search()[2:(which(search()=='package:stats')-1)]").AsCharacter().ToArray();
+                Evaluate("search()[2:(which(search()=='package:stats')-1)]", out var ex);
+                toDetach = ex.AsCharacter().ToArray();
             }
             foreach (var dbName in toDetach)
             {

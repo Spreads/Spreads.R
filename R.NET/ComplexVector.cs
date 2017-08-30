@@ -1,12 +1,12 @@
-﻿using RDotNet.Internals;
-using RDotNet.Utilities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
+using Spreads.R.Internals;
+using Spreads.R.Utilities;
 
-namespace RDotNet
+namespace Spreads.R
 {
     /// <summary>
     /// A collection of complex numbers.

@@ -1,6 +1,6 @@
-﻿using RDotNet.Internals;
+﻿using Spreads.R.Internals;
 
-namespace RDotNet.Devices
+namespace Spreads.R.Devices
 {
     /// <summary>
     /// A console class handles user's inputs and outputs.

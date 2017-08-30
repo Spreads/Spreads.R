@@ -1,8 +1,8 @@
-﻿using RDotNet.Internals;
-using System;
+﻿using System;
 using System.Security.Permissions;
+using Spreads.R.Internals;
 
-namespace RDotNet
+namespace Spreads.R
 {
     [SecurityPermission(SecurityAction.Demand, Flags = SecurityPermissionFlag.UnmanagedCode)]
     internal class ProtectedPointer : IDisposable

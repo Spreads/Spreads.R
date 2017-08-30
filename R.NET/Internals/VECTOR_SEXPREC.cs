@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace RDotNet.Internals
+namespace Spreads.R.Internals
 {
     [StructLayout(LayoutKind.Sequential)]
     internal struct VECTOR_SEXPREC

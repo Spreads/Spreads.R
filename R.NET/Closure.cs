@@ -1,9 +1,9 @@
-﻿using RDotNet.Internals;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Spreads.R.Internals;
 
-namespace RDotNet
+namespace Spreads.R
 {
     /// <summary>
     /// A closure.
